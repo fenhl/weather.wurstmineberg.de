@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Is it raining on Wurstmineberg?" />
         <meta name="author" content="Wurstmineberg" />
+        <link rel="shortcut icon" href="//assets.wurstmineberg.de/img/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="//assets.wurstmineberg.de/css/common.css" />
@@ -13,6 +14,42 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="//wurstmineberg.de/">Wurstmineberg</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul id="navbar-list" class="nav navbar-nav">
+                    <li><a href="//wurstmineberg.de/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="//wurstmineberg.de/about"><i class="fa fa-info-circle"></i> About</a></li>
+                    <li><a href="//wurstmineberg.de/people"><i class="fa fa-users"></i> People</a></li>
+                    <li><a href="//wurstmineberg.de/stats"><i class="fa fa-table"></i> Statistics</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-book"></i> Wiki<b class="caret"></b></a>
+                        <ul class="dropdown-menu p-navigation" id="p-navigation">
+                            <li id="n-mainpage-description"><a href="//wiki.wurstmineberg.de/" title="Visit the main page [ctrl-alt-z]" accesskey="z">Main page</a></li>
+                            <li id="n-currentevents"><a href="//wiki.wurstmineberg.de/Wurstmineberg_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+                            <li id="n-recentchanges"><a href="//wiki.wurstmineberg.de/Special:RecentChanges" title="A list of recent changes in the wiki [ctrl-alt-r]" accesskey="r">Recent changes</a></li>
+                            <li id="n-randompage"><a href="//wiki.wurstmineberg.de/Special:Random" title="Load a random page [ctrl-alt-x]" accesskey="x">Random page</a></li>
+                            <li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-ellipsis-h"></i> More<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="//alltheitems.wurstmineberg.de/">All The Items</a></li>
+                            <li><a href="/">Weather</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div id="container">
             <h1 id="isitraining-caption">Weather forecast for the wurstmineberg world</h1>
             <h1 id="rain-caption">&nbsp;<noscript>JavaScript required</noscript>&nbsp;</h1>
@@ -20,18 +57,21 @@
             <p id="rain-text"></p>
             <p><span id="forecast-text"></span></p>
             <p>The time is represented in <a href="//time.wurstmineberg.de">Minecraft time.</a></p>
-            <hr />
-            <footer>
-                <p class="muted text-center"><a href="https://wurstmineberg.de">In case you're wondering what this is about…</a>
-                <br />
-                It works because of <a href="https://api.wurstmineberg.de/">this</a>.
-                </p>
-            </footer>
         </div>
+        <hr />
+        <p class="muted text-center">The People of wurstmineberg.de 2012–2016</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
         <script src="//assets.wurstmineberg.de/js/common.js"></script>
         <script src="/rain.js"></script>
+        <script type="text/javascript">
+            // run by default
+            //linkifyHeaders();
+            //configureNavigation();
+            setAnchorHeight();
+            $(".use-tooltip").tooltip();
+            $("abbr").tooltip();
+        </script>
     </body>
 </html>

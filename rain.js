@@ -40,7 +40,7 @@ function ticks_to_text(ticks)
     var months = Math.floor(days / 8);
     var monthsSinceYear = months % 9 ;
     var years = Math.floor(months / 9);
-    
+
     var text = padNumber(secondsSinceHour, 2) + 's';
 
     if (hours > 0) {
